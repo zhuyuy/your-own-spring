@@ -8,6 +8,9 @@ public class ApplicationContext {
 
     public ApplicationContext(Class configClass) {
         this.configClass = configClass;
+        ComponentScan componentScanAnnotation = (ComponentScan) configClass.getDeclaredAnnotation(ComponentScan.class);
+        String path = componentScanAnnotation.value();
+        System.out.println(path);
     }
 
 }
